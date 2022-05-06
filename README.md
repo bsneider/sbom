@@ -4,6 +4,13 @@
   - [Quick Start (Mac)](#quick-start-mac)
     - [Prerequisite](#prerequisite)
   - [Research](#research)
+    - [NTIA](#ntia)
+      - [Introduction to SBOM](#introduction-to-sbom)
+      - [Understanding SBOM](#understanding-sbom)
+      - [SBOM Implementation](#sbom-implementation)
+      - [Technical Resources](#technical-resources)
+      - [Lessons from the Proof of Concept Work](#lessons-from-the-proof-of-concept-work)
+      - [Other Resources](#other-resources)
     - [CISA](#cisa)
       - [Events](#events)
       - [Resources](#resources)
@@ -27,7 +34,98 @@ kind create cluster
 
 ## Research
 
+### NTIA
+
 [https://www.ntia.gov/SBOM](https://www.ntia.gov/SBOM)
+
+A “Software Bill of Materials” (SBOM) is a nested inventory for software, a list of ingredients that make up software components. The following documents were drafted by stakeholders in an open and transparent process to address transparency around software components, and were approved by a consensus of participating stakeholders. More information about the NTIA multistakeholder process on software component transparency is available [here](/SoftwareTransparency).
+
+#### Introduction to SBOM
+
+- [SBOM at a Glance (2021)](/files/ntia/publications/sbom_at_a_glance_apr2021.pdf)  
+This resource provides an introduction to the practice of SBOM, supporting literature, and the pivotal role SBOMs play in providing much-needed transparency for the software supply chain.  ([Japanese translation](/files/ntia/publications/sbom_at_a_glance_ja.pdf))
+
+- [SBOM FAQ (2021)](/files/ntia/publications/sbom_faq_-_20201116.pdf)  
+This document outlines detailed information, benefits, and commonly asked questions.
+
+- [SBOM Myths vs. Facts (2021)](/files/ntia/publications/sbom_myths_vs_facts_nov2021.pdf)
+This document is intended to help the reader to understand and dispel common, often sincere myths and misconceptions about SBOM.
+
+- [SBOM Explainer Videos on YouTube (2020-2021) (link is external)](https://youtube.com/playlist?list=PLO2lqCK7WyTDpVmcHsy6R2HWftFkUp6zG)  
+This collection of videos provides a wide range of information about SBOM including introductory concepts, technical webinars, and proof of concept presentations.
+
+<details>
+<summary>NTIA Expanded</summary>
+
+#### Understanding SBOM
+
+- [Framing Software Component Transparency: Establishing a Common Software Bill of Materials (SBOM) – (2021)](/files/ntia/publications/ntia_sbom_framing_2nd_edition_20211021.pdf)  
+This resource serves as the detailed foundation of SBOM. It defines SBOM concepts and related terms, offers an updated baseline of how software components are to be represented, and discusses the processes around SBOM creation. (prior [2019 edition](/files/ntia/publications/framingsbom_20191112.pdf))
+
+- **[SBOM Options and Decision Points (2021)](/files/ntia/publications/sbom_options_and_decision_points_20210427-1.pdf)**  
+This resource frames the dimensions of SBOM creation and delivery, to support more consistent and effective articulation of needs between requesters and suppliers of SBOMs.  
+
+- **[Use Cases: Roles and Benefits for SBOM Across the Supply Chain (2019)](/files/ntia/publications/ntia_sbom_use_cases_roles_benefits-nov2019.pdf)**  
+This resource summarizes the use cases and benefits of having an SBOM from the perspective of those who make software, those who choose or buy software, and those who operate it. It characterizes the security, quality, efficiency, and other organizational benefits, as well as the potential for the broader ecosystem across the supply chain.
+
+- [**SBOM Tool Classification Taxonomy (2021)**](/files/ntia/publications/ntia_sbom_tooling_taxonomy-2021mar30.pdf)  
+This resource offers a categorization of different types of SBOM tools. It can help tool creators and vendors to easily classify their work, and can help those who need SBOM tools understand what is available.
+
+#### SBOM Implementation
+
+- [**Survey of Existing SBOM Formats and Standards (2021)**](/files/ntia/publications/sbom_formats_survey-version-2021.pdf)  
+This resource summarizes existing standards, formats, and initiatives as they apply to identifying the external components and shared libraries used in the construction of software products for SBOMs, highlighting three key formats of SPDX, CycloneDX, and SWID. The group analyzed efforts already underway by other groups related to communicating this information in a machine-readable manner. (prior [2019 edition](/ntia/publications/ntia_sbom_formats_and_standards_whitepaper_-_version_20191025.pdf))
+
+- [Software Suppliers Playbook: SBOM Production and Provision (2021)](/files/ntia/publications/software_suppliers_sbom_production_and_provision_-_final.pdf)  
+This resource outlines workflows for the production of Software Bills of Materials (SBOM) and their provision by software suppliers, including software vendors supplying a commercial product, contract software developers supplying a software deliverable to clients, and open source software (OSS) development projects making their capabilities publicly available.
+
+- [Software Consumers Playbook: SBOM Acquisition, Management, and Use (2021)](/files/ntia/publications/software_consumers_sbom_acquisition_management_and_use_-_final.pdf)  
+This resource outlines workflows for the acquisition, management, and use of SBOM by software consumers, including commercial and non-commercial entities acquiring third-party software capabilities from a supplier.
+
+- [How-To Guide for SBOM Generation (2021)](/files/ntia/publications/howto_guide_for_sbom_generation_v1.pdf)  
+This resource offers instructions and guidance on how to generate an SBOM based on the experiences of the Healthcare Proof-of-Concept working group.
+
+- [Sharing and Exchanging SBOMs (2021)](/files/ntia/publications/ntia_sbom_sharing_exchanging_sboms-10feb2021.pdf)
+This resource describes how SBOM data can flow down the supply chain, and provides a small set of SBOM discovery and access options to support flexibility while minimizing the burden of implementation.
+
+#### Technical Resources
+
+- [**Software Identity: Challenges and Guidance (2021)**](/files/ntia/publications/ntia_sbom_software_identity-2021mar30.pdf)  
+This resource reviews the challenges of identifying software components for SBOM implementation with sufficient discoverability and uniqueness. It offers guidance to functionally identify software components in the short term and converge multiple existing identification systems in the near future.
+
+- [**SBOM Tool Classification Taxonomy (2021)**](/files/ntia/publications/ntia_sbom_tooling_taxonomy-2021mar30.pdf)  
+This resource offers a categorization of different types of SBOM tools. It can help tool creators and vendors to easily classify their work, and can help those who need SBOM tools understand what is available.
+
+- [Vulnerability-Exploitability eXchange (VEX) - An Overview (2021)](/files/ntia/publications/vex_one-page_summary.pdf)  
+This resource offers a brief introduction to VEX, which allows a software supplier to clarify whether a specific vulnerability actually affects a product.
+
+#### Lessons from the Proof of Concept Work
+
+- [How-To Guide for SBOM Generation in Healthcare (2021)](/files/ntia/publications/howto_guide_for_sbom_generation_v1.pdf)  
+This resource offers instructions and guidance on how to generate an SBOM based on the experiences of the Healthcare Proof-of-Concept working group.
+
+- [Healthcare SBOM Proof of Concept – Phase II Summary (2021)](/files/ntia/publications/healthcare_sbom_proof_of_concept_-_phase_ii_summary.pdf)  
+Phase II confirmed the value of providing SBOM information, proving the viability of the baseline elements, expanding use cases and participants, developing a how-to guide, and exploring the use of VEX.
+
+- **[Healthcare Proof of Concept Report (2019)](/files/ntia/publications/ntia_sbom_healthcare_poc_report_2019_1001.pdf)**  
+This resource documents the successful execution and lessons learned of a proof-of-concept exercise led by medical device manufacturers (MDMs) and healthcare delivery organizations (HDOs). The exercise examined the feasibility of SBOMs being generated by MDMs and used by HDOs as part of operational and risk management approaches to medical devices at their hospitals.
+
+#### Other Resources
+
+- [Software Bill of Materials Related Efforts (2021)](/files/ntia/publications/sbom_related_efforts_oct2021.pdf)  
+A collection of initiatives, guidance, models, frameworks, and reports that explicitly or implicitly highlight the value of SBOM.
+
+- [**Software Identity: Challenges and Guidance (2021)**](/files/ntia/publications/ntia_sbom_software_identity-2021mar30.pdf)
+
+This resource reviews the challenges of identifying software components for SBOM implementation with sufficient discoverability and uniqueness. It offers guidance to functionally identify software components in the short term and converge multiple existing identification systems in the near future.
+
+- [SBOM Two-Page Overview (2020)](/files/ntia/publications/sbom_overview_20200818.pdf)  
+This document provides high-level information on SBOM’s background and ecosystem-wide solution, the NTIA process, and an example of an SBOM.
+
+**For more information, please contact [mdoscher@ntia.gov](mailto:mdoscher@ntia.gov)**
+
+**For upcoming and archived meeting details, please visit the [NTIA Software Component Transparency page](/SoftwareTransparency).**
+</details>
 
 ### CISA
 

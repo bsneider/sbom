@@ -1,11 +1,18 @@
 {
     "cSpell.words": [
         "CISA",
+        "discoverability",
         "Exploitability",
         "multistakeholder",
         "ntia",
         "NTIA’s",
         "operationalization",
-        "SBOM"
+        "SBOM",
+        "sboms",
+        "SWID"
+    ],
+    "cSpell.ignoreWords": [
+        "framingsbom",
+        "howto"
     ]
 }
