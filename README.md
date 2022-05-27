@@ -19,6 +19,8 @@
     - [K8s Admission Control Using SBOMs](#k8s-admission-control-using-sboms)
     - [Image Scanner](#image-scanner)
     - [Formats](#formats)
+    - [Generating SBOMs](#generating-sboms)
+    - [Related Tools](#related-tools)
 
 ## Quick Start (Mac)
 
