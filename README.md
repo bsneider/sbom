@@ -165,6 +165,14 @@ For any questions or to receive updates on CISA’s SBOM work, please contact [S
 
 [https://github.com/anchore/syft](https://github.com/anchore/syft)
 
+### K8s Admission Control Using SBOMs:
+
+#### Available Tools:
+
+[Ratify](https://github.com/deislabs/ratify) - Integrates with OPA Gatekeeper to verify the authenticity/provenance of artifacts and their supplied attestations (including SBOMs)
+[Cosigned Admissions Controller](https://docs.sigstore.dev/cosign/kubernetes/#cosigned-admission-controller) - Uses cosign/sigstore to verify metadata of container images before admitting them in a cluster. This *can* include the authenticity/provenance of an SBOM.
+[OPA - Conftest](https://github.com/open-policy-agent/conftest) - Allows writing OPA/rego tests for application configuration. Includes native module for parsing CycloneDX and SPDX SBOM material. This *should* allow creating rules based on the contents of an SBOM (example: presence of a vulnerable version of log4j in the dependency tree).
+
 ### Formats
 
 SPDX is an open standard for communicating software bill of material information, including provenance, license, security, and other related information. SPDX reduces redundant work by providing common formats for organizations and communities to share important data, thereby streamlining and improving compliance, security, and dependability. The SPDX specification is recognized as the international open standard for security, license compliance, and other software supply chain artifacts as ISO/IEC 5962:2021.
