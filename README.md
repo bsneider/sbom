@@ -16,6 +16,7 @@
       - [Resources](#resources)
       - [More information](#more-information)
     - [K8S SBOM](#k8s-sbom)
+    - [K8s Admission Control Using SBOMs](#k8s-admission-control-using-sboms)
     - [Image Scanner](#image-scanner)
     - [Formats](#formats)
 
@@ -165,13 +166,13 @@ For any questions or to receive updates on CISA’s SBOM work, please contact [S
 
 [https://github.com/anchore/syft](https://github.com/anchore/syft)
 
-### K8s Admission Control Using SBOMs:
+### K8s Admission Control Using SBOMs
 
-#### Available Tools:
+#### Available Tools
 
-[Ratify](https://github.com/deislabs/ratify) - Integrates with OPA Gatekeeper to verify the authenticity/provenance of artifacts and their supplied attestations (including SBOMs)
-[Cosigned Admissions Controller](https://docs.sigstore.dev/cosign/kubernetes/#cosigned-admission-controller) - Uses cosign/sigstore to verify metadata of container images before admitting them in a cluster. This *can* include the authenticity/provenance of an SBOM.
-[OPA - Conftest](https://github.com/open-policy-agent/conftest) - Allows writing OPA/rego tests for application configuration. Includes native module for parsing CycloneDX and SPDX SBOM material. This *should* allow creating rules based on the contents of an SBOM (example: presence of a vulnerable version of log4j in the dependency tree).
+- [Ratify](https://github.com/deislabs/ratify) - Integrates with OPA Gatekeeper to verify the authenticity/provenance of artifacts and their supplied attestations (including SBOMs)
+- [Cosigned Admissions Controller](https://docs.sigstore.dev/cosign/kubernetes/#cosigned-admission-controller) - Uses cosign/sigstore to verify metadata of container images before admitting them in a cluster. This *can* include the authenticity/provenance of an SBOM.
+- [OPA - Conftest](https://github.com/open-policy-agent/conftest) - Allows writing OPA/rego tests for application configuration. Includes native module for parsing CycloneDX and SPDX SBOM material. This *should* allow creating rules based on the contents of an SBOM (example: presence of a vulnerable version of log4j in the dependency tree).
 
 ### Formats
 
