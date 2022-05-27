@@ -178,3 +178,18 @@ For any questions or to receive updates on CISA’s SBOM work, please contact [S
 
 SPDX is an open standard for communicating software bill of material information, including provenance, license, security, and other related information. SPDX reduces redundant work by providing common formats for organizations and communities to share important data, thereby streamlining and improving compliance, security, and dependability. The SPDX specification is recognized as the international open standard for security, license compliance, and other software supply chain artifacts as ISO/IEC 5962:2021.
 [https://spdx.dev/about/](https://spdx.dev/about/)
+
+CycloneDX
+
+### Generating SBOMs
+
+#### Available Tools
+
+- [Syft](https://github.com/anchore/syft) - By Anchore. Supports CycloneDX and SPDX Formats. Can create in-toto spec compatible SBOM attestations.
+- [Tern](https://github.com/tern-tools/tern) - Supports CycloneDX and SPDX Formats. SBOMs generated layer by layer for container images.
+
+### Related Tools
+
+- [in-toto](https://github.com/in-toto/in-toto) - Specification and toolset for tracing and validating supply chain integrity. Does not generate SBOMs, but can be used to sign and validate them
+- [witness](https://github.com/testifysec/witness) - Implementation of in-toto specification with some additional bells and whistles. Roadmap includes using CACs for signing/attestation of images and implementing a K8s Admissions Controller.
+- [grype](https://github.com/anchore/grype) - Vulnerability scanner by Anchore, works seamlessly with Syft to scan for vulnerabilities based on SBOM data. Not an admissions controller, but could potentially be used to provide data to one about vulnerability status of an image.
