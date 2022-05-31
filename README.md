@@ -16,8 +16,11 @@
       - [Resources](#resources)
       - [More information](#more-information)
     - [K8S SBOM](#k8s-sbom)
+    - [K8s Admission Control Using SBOMs](#k8s-admission-control-using-sboms)
     - [Image Scanner](#image-scanner)
     - [Formats](#formats)
+    - [Generating SBOMs](#generating-sboms)
+    - [Related Tools](#related-tools)
 
 ## Quick Start (Mac)
 
@@ -165,7 +168,30 @@ For any questions or to receive updates on CISA’s SBOM work, please contact [S
 
 [https://github.com/anchore/syft](https://github.com/anchore/syft)
 
+### K8s Admission Control Using SBOMs
+
+#### Available Tools
+
+- [Ratify](https://github.com/deislabs/ratify) - Integrates with OPA Gatekeeper to verify the authenticity/provenance of artifacts and their supplied attestations (including SBOMs)
+- [Cosigned Admissions Controller](https://docs.sigstore.dev/cosign/kubernetes/#cosigned-admission-controller) - Uses cosign/sigstore to verify metadata of container images before admitting them in a cluster. This *can* include the authenticity/provenance of an SBOM.
+- [OPA - Conftest](https://github.com/open-policy-agent/conftest) - Allows writing OPA/rego tests for application configuration. Includes native module for parsing CycloneDX and SPDX SBOM material. This *should* allow creating rules based on the contents of an SBOM (example: presence of a vulnerable version of log4j in the dependency tree).
+
 ### Formats
 
 SPDX is an open standard for communicating software bill of material information, including provenance, license, security, and other related information. SPDX reduces redundant work by providing common formats for organizations and communities to share important data, thereby streamlining and improving compliance, security, and dependability. The SPDX specification is recognized as the international open standard for security, license compliance, and other software supply chain artifacts as ISO/IEC 5962:2021.
 [https://spdx.dev/about/](https://spdx.dev/about/)
+
+CycloneDX
+
+### Generating SBOMs
+
+#### Available Tools
+
+- [Syft](https://github.com/anchore/syft) - By Anchore. Supports CycloneDX and SPDX Formats. Can create in-toto spec compatible SBOM attestations.
+- [Tern](https://github.com/tern-tools/tern) - Supports CycloneDX and SPDX Formats. SBOMs generated layer by layer for container images.
+
+### Related Tools
+
+- [in-toto](https://github.com/in-toto/in-toto) - Specification and toolset for tracing and validating supply chain integrity. Does not generate SBOMs, but can be used to sign and validate them
+- [witness](https://github.com/testifysec/witness) - Implementation of in-toto specification with some additional bells and whistles. Roadmap includes using CACs for signing/attestation of images and implementing a K8s Admissions Controller.
+- [grype](https://github.com/anchore/grype) - Vulnerability scanner by Anchore, works seamlessly with Syft to scan for vulnerabilities based on SBOM data. Not an admissions controller, but could potentially be used to provide data to one about vulnerability status of an image.
